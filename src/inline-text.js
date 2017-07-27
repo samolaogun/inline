@@ -9,7 +9,7 @@ export default function () {
 
     var sizeBefore = parseInt(styles.font.split(' ')[4]);
     var widthBefore = parseInt(styles.width);
-
+    
     ctx.font = styles.font;
     var widthAfter = ctx.measureText(element.innerHTML).width;
 
