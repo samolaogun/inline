@@ -1,10 +1,10 @@
 'use strict';
 
-function inline(element) {
+export default function () {
   var canvas = document.createElement('canvas');
   var ctx = canvas.getContext('2d');
-
-  return function() {
+  
+  return function(element) {
     var styles = window.getComputedStyle(element);
 
     var sizeBefore = parseInt(styles.font.split(' ')[4]);
@@ -16,4 +16,4 @@ function inline(element) {
     var sizeAfter = widthBefore / widthAfter * sizeBefore;
     element.style.setProperty('font-size', sizeAfter + 'px');
   }
-}
+};

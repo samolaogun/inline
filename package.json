@@ -1,0 +1,23 @@
+{
+  "name": "inline-text",
+  "version": "1.0.0",
+  "description": "Display long text on one line.",
+  "main": "dist/inline.js",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samolaogun/inline.git"
+  },
+  "author": "Sam Olaogun",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/samolaogun/inline/issues"
+  },
+  "homepage": "https://github.com/samolaogun/inline#readme",
+  "devDependencies": {
+    "rollup": "^0.45.2",
+    "rollup-plugin-uglify": "^2.0.1"
+  }
+}
