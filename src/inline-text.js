@@ -1,19 +1,19 @@
 'use strict';
 
 export default function () {
-  var canvas = document.createElement('canvas');
-  var ctx = canvas.getContext('2d');
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
   
   return function(element) {
-    var styles = window.getComputedStyle(element);
+    const styles = window.getComputedStyle(element);
 
-    var sizeBefore = parseInt(styles.font.split(' ')[4]);
-    var widthBefore = parseInt(styles.width);
+    const sizeBefore = parseInt(styles.fontSize);
+    const { width: wrappedWidth } = element.getBoundingClientRect();
     
     ctx.font = styles.font;
-    var widthAfter = ctx.measureText(element.innerHTML).width;
+    const { width: rawWidth }  = ctx.measureText(element.innerHTML);
 
-    var sizeAfter = widthBefore / widthAfter * sizeBefore;
+    const sizeAfter = wrappedWidth / rawWidth * sizeBefore;
     element.style.setProperty('font-size', sizeAfter + 'px');
   }
 };
